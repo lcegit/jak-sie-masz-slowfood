@@ -24,6 +24,8 @@ Feature: User can select preferred category in order to view a relevant list of 
     Then show me the page
     Then I would like to see "Thomas Kebabrulle" in the "Chinese" category
     And I would like to see "Oliver's Burger" in the "Chinese" category
+    And I would not like to see "Borat's Palace" in the "French" category
+    And I would like to see "Lisa's Bistro" in the "French" category
     When I click on "French" button
     Then I would like to see "Borat's Palace" in the "French" category
     And I would like to see "Lisa's Bistro" in the "French" category

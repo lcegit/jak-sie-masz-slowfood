@@ -1,3 +1,4 @@
+
 <h1>Dishley House</h1>
 <p>What do you feel like tonight?</p>
 
@@ -8,7 +9,7 @@
     </button>
     <% restaurant_category.restaurants.each do |restaurant| %>
       <div id="restaurant-<%= restaurant.id %>">
-        <%= "#{restaurant.name}" %>
+        <p><%= "#{restaurant.name}" %></p>
         <%= link_to 'Show page', restaurant_path(restaurant) %>
       </div>
     <% end %>
