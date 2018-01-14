@@ -3,7 +3,9 @@
 
 <% @restaurant_categories.each do |restaurant_category| %>
   <div id="restaurant_category-<%= restaurant_category.name %>">
+    <button type="button", name="restaurant_category.name">
     <%= "#{restaurant_category.name}" %>
+    </button>
     <% restaurant_category.restaurants.each do |restaurant| %>
       <div id="restaurant-<%= restaurant.id %>">
         <%= "#{restaurant.name}" %>
