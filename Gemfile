@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'geocoder'
 gem 'dotenv-rails'
 gem 'rails-assets-gmaps', source: 'https://rails-assets.org'
+gem 'acts_as_shopping_cart'
 
 group :development, :test do
   gem 'pry-byebug'

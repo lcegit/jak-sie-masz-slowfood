@@ -11,9 +11,16 @@
         <h3><%= product_category.name %></h3>
         <% product_category.products.each do |product| %>
           <div id="product-<%= product.id %>">
-            <h4><%= product.name %></h4>
-            <p><%= product.description %></p>
-            <p><%= product.price %></p>
+            <span><%= product.name %>
+              <%= product.description %>
+              Price:
+              <%= product.price %>
+              kr</span>
+            <% if session[:order_id] %>
+              <%=button_to 'Add to Order', order_path(session[:order_id]), method: :put, params: {product: product} %>
+            <% else %>
+              <%=button_to 'Add to Order', orders_path, params: {product: product} %>
+            <% end %>
           </div>
         <% end %>
       </div>

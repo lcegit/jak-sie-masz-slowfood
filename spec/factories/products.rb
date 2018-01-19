@@ -4,6 +4,6 @@ FactoryBot.define do
     product_category
     name "MyString"
     description "Product description"
-    price "80 kr"
+    price 80
   end
 end
