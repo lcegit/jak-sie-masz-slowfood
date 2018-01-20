@@ -1,14 +1,17 @@
-<h2 style= "padding-top: 1em;">What do you feel like tonight?</h2>
+<h2 style= "padding: 1em;">What do you feel like tonight?</h2>
 
 <div id="map"></div>
 
 <% @restaurants.group_by(&:category_name).each do |key, collection| %>
-  <div id="restaurant-category-<%= key.downcase %>">
+  <div id="restaurant-category-<%= key.downcase %>" style="padding: 1em;">
     <h1><%= key %></h1>
     <% collection.each do |restaurant| %>
       <div id="restaurant-<%= restaurant.id %>">
         <%= restaurant.name %>
-        <%= link_to 'Visit', restaurant_path(restaurant) %>
+        <button type="button" class="btn btn-success">
+          <%= button_to 'Visit', restaurant_path(restaurant), method: 'get' %>
+        <!-- <%= link_to 'Visit', restaurant_path(restaurant) %> -->
+        </button>
       </div>
     <% end %>
   </div>
