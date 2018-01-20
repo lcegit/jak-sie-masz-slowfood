@@ -38,7 +38,7 @@ function addCenterMarker(map) {
         },
         icon: {
             scaledSize: new google.maps.Size(30, 30),
-            url: 'https://furtaev.ru/preview/current_location_map_pointer_small.png'
+            url: 'https://furtaev.ru/preview/eat_at_home.png'
         }
     });
 };
@@ -54,7 +54,7 @@ function addMarkers() {
             },
             icon: {
                     scaledSize: new google.maps.Size(30, 30),
-                    url: 'https://furtaev.ru/preview/restaurant_map_pointer_small.png'
+                    url: 'https://furtaev.ru/preview/home_map_pointer.png'
             }
         });
       });
