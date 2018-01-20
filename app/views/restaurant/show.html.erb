@@ -1,5 +1,5 @@
-<h2><%= @restaurant.name %></h2>
-<p><%= @restaurant.description %></p>
+<h2 style="margin-top: 30px;"><%= @restaurant.name %></h2>
+<h5 class="lead"><%= @restaurant.description %></h5>
 
 <% @restaurant.menus.each do |menu| %>
   <div id="menu-<%= menu.id %>">
