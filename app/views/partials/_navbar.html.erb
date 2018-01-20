@@ -1,14 +1,22 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;" id="navbar">
-  <div class= id="navbarText">
-    <ul class="nav">
+
+<nav class="navbar navbar-light" style="background-color: black;" id="navbar">
+  <!-- <div id="navbarText"> -->
+    <ul class="nav" style="padding-left: 1em;">
       <li class="nav-item active">
         <%= link_to 'Home', root_path, class: 'nav-link' %>
       </li>
+    </ul>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Dishley</a>
+      </li>
+    </ul>
+    <ul class="nav justify-content-end" style="padding-right: 1em;">
       <li class="nav-item">
         <% if session[:order_id] %>
           <%= link_to 'Order', order_path(session[:order_id]), class: 'nav-link' %>
         <% end %>
       </li>
     </ul>
-  </div>
+  <!-- </div> -->
 </nav>
