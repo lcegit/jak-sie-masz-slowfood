@@ -4,14 +4,10 @@
 
 <% @restaurants.group_by(&:category_name).each do |key, collection| %>
   <div id="restaurant-category-<%= key.downcase %>" style="padding: 1em;">
-    <h1><%= key %></h1>
+    <h4><%= key %></h4>
     <% collection.each do |restaurant| %>
       <div id="restaurant-<%= restaurant.id %>">
-        <%= restaurant.name %>
-        <button type="button" class="btn btn-success">
-          <%= button_to 'Visit', restaurant_path(restaurant), method: 'get' %>
-        <!-- <%= link_to 'Visit', restaurant_path(restaurant) %> -->
-        </button>
+        <h3><%= link_to restaurant.name, restaurant, style: 'color: black' %></h3>
       </div>
     <% end %>
   </div>
