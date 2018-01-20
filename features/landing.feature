@@ -5,5 +5,4 @@ Feature: User can visit landing page
 
   Scenario: User visits landing page
     When I visit the landing page
-    Then I would like to see "Dishley House"
-    And I would like to see "What do you feel like tonight?"
+    Then I would like to see "What do you feel like tonight?"
