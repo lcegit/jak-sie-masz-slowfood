@@ -1,5 +1,6 @@
-<h1>Dishley House</h1>
-<p>What do you feel like tonight?</p>
+<h5>Dishley House</h5>
+<h2>What do you feel like tonight?</h2>
+<div id="map"></div>
 
 <% @restaurants.group_by(&:category_name).each do |key, collection| %>
   <div id="restaurant-category-<%= key.downcase %>">
@@ -13,7 +14,6 @@
   </div>
 <% end %>
 
-<div id="map"></div>
 <script type="text/javascript" charset="utf-8">
   var restaurants = <%= raw @restaurants.to_json %>;
 </script>

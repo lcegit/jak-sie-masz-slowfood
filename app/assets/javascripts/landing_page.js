@@ -18,8 +18,30 @@ function displayMap(pos) {
         lat: coords.latitude,
         lng: coords.longitude
     });
-    addMarkers()
+    map.addStyle({
+      styles: style,
+      mapTypeId: 'custom-style'
+    })
+    map.setStyle('custom-style');
+    addMarkers();
+    addCenterMarker(map);
 }
+
+function addCenterMarker(map) {
+    //const restaurants = []
+    map.addMarker({
+        lat: map.getCenter().lat(),
+        lng: map.getCenter().lng(),
+        title: 'Your location',
+        infoWindow: {
+            content: '<h4>You are here</h4>'
+        },
+        icon: {
+            scaledSize: new google.maps.Size(30, 30),
+            url: 'https://furtaev.ru/preview/current_location_map_pointer_small.png'
+        }
+    });
+};
 
 function addMarkers() {
     restaurants.forEach(function (item) {
@@ -29,6 +51,10 @@ function addMarkers() {
             title: item.name,
             infoWindow: {
                 content: '<h4>' + item.name + '</h4><p>' + item.city +'</p>'
+            },
+            icon: {
+                    scaledSize: new google.maps.Size(30, 30),
+                    url: 'https://furtaev.ru/preview/restaurant_map_pointer_small.png'
             }
         });
       });
