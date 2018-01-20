@@ -56,7 +56,7 @@ function redirectWithLocation(position) {
   }
 }
 
-setCookie = function setCookie(name, value) {
+function setCookie(name, value) {
   var days = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 7;
   var path = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '/';
 
@@ -65,4 +65,4 @@ setCookie = function setCookie(name, value) {
     document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path;
     resolve();
   });
-};
+}
