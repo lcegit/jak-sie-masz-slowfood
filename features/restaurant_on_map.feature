@@ -14,4 +14,4 @@ Feature: Showing restaurants on map
   Scenario:
     When I visit the landing page
     Then I should see the map
-    And I should see 3 markers
+    And I should see 4 markers
