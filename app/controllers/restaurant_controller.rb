@@ -2,7 +2,7 @@ class RestaurantController < ApplicationController
   before_action :coordinates, only: :index
 
   def index
-    @restaurants = Restaurant.near([@coordinates[:latitude], @coordinates[:longitude]], 100)
+    @restaurants = Restaurant.near([@coordinates[:latitude], @coordinates[:longitude]], 50)
   end
 
   def show

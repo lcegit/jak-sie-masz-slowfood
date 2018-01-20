@@ -10,6 +10,8 @@ Feature: Showing restaurants on map
       | Oliver's Burger   | Kungsgatan 1      | Göteborg |
       | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
 
+    And I am at latitude: "57.7", longitude: "11.9"
+
   @javascript @googlemap
   Scenario:
     When I visit the landing page
