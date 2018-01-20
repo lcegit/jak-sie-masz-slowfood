@@ -54,7 +54,7 @@ function addMarkers() {
             },
             icon: {
                     scaledSize: new google.maps.Size(30, 30),
-                    url: 'https://furtaev.ru/preview/home_map_pointer.png'
+                    url: 'https://furtaev.ru/preview/man.png'
             }
         });
       });
