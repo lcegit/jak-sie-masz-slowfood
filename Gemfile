@@ -17,7 +17,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'geocoder'
 gem 'dotenv-rails'
 gem 'rails-assets-gmaps', source: 'https://rails-assets.org'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.0'
 gem 'acts_as_shopping_cart'
+
 
 group :development, :test do
   gem 'pry-byebug'
@@ -39,5 +42,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
