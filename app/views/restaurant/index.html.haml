@@ -1,4 +1,4 @@
-%h2{:style => "padding: 1em;"} What do you feel like tonight?
+%h2.h2-question What do you feel like tonight?
 #map
 .row
   - @restaurants.group_by(&:category_name).each do |key, collection|
