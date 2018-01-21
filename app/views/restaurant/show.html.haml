@@ -1,0 +1,32 @@
+.container
+  .row
+    .col
+    .col-8
+      %h1{:style => "margin-top: 1em;"}= @restaurant.name
+      %p.address
+        = @restaurant.street_address
+        ,
+        \#{@restaurant.post_code},
+        \#{@restaurant.city}
+      %h2.mr-dafoe= @restaurant.description
+      - @restaurant.menus.each do |menu|
+        .card-body{:id => "menu-#{menu.id}"}
+          %h3.mr-dafoe.menu-dafoe= menu.name
+          - menu.product_categories.each do |product_category|
+            .card-title{:id => "product_category-#{product_category.id}"}
+              %h2.mr-dafoe= product_category.name
+              - product_category.products.each do |product|
+                .card-text{:id => "product-#{product.id}"}
+                  .card-text
+                    %h4= product.name
+                    %p= product.description
+                  .card-text
+                    %p
+                      Price:
+                      \#{product.price}
+                      kr
+                  - if session[:order_id]
+                    = button_to 'Add to Order', order_path(session[:order_id]), method: :put, params: {product: product}, class: 'btn btn-light'
+                  - else
+                    = button_to 'Add to Order', orders_path, params: {product: product}, class: 'btn btn-light'
+    .col
