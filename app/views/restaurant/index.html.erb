@@ -1,17 +1,19 @@
-<h2 style= "padding: 1em;">What do you feel like tonight?</h2>
+<h2 style="padding: 1em;">What do you feel like tonight?</h2>
 
 <div id="map"></div>
 
-<% @restaurants.group_by(&:category_name).each do |key, collection| %>
-  <div id="restaurant-category-<%= key.downcase %>" style="padding: 1em;">
-    <h4><%= key %></h4>
-    <% collection.each do |restaurant| %>
-      <div id="restaurant-<%= restaurant.id %>">
-        <h3><%= link_to restaurant.name, restaurant, style: 'color: black' %></h3>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+<div class="row">
+  <% @restaurants.group_by(&:category_name).each do |key, collection| %>
+  <div id="restaurant-category-<%= key.downcase %>" class="card col-sm-3" style="padding: 1em;" style="background-color: ##F5F5F5;">
+    <h3 class="card-title"><%= key %></h3>
+      <% collection.each do |restaurant| %>
+        <div id="restaurant-<%= restaurant.id %>" div class="card-body">
+          <h3 class="card-text"><%= link_to restaurant.name, restaurant, style: 'color: #6c757d;' %></h3>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
 <script type="text/javascript" charset="utf-8">
   var restaurants = <%= raw @restaurants.to_json %>;

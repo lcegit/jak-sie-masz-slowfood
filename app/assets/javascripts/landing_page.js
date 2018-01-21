@@ -14,7 +14,7 @@ function displayMap(pos) {
   console.log(pos.coords);
   map = GMaps({
     div: '#map',
-    zoom: 12,
+    zoom: 13,
     lat: coords.latitude,
     lng: coords.longitude
   });

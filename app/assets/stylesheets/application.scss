@@ -1,7 +1,7 @@
 @import 'bootstrap';
 
 #map {
-  height: 400px;
+  height: 440px;
   width: 100%;
 }
 
@@ -11,4 +11,13 @@ body {
 
 nav a {
   color: #FFF;
+}
+
+card-text a {
+  color: #6c757d;
+  text-decoration: underline;
+}
+
+.card {
+  border-width: 0;
 }

@@ -9,6 +9,13 @@ Restaurant.create(name: 'Åsa Thai Restaurang & Take Away',
                   description: 'Really nice local thai food',
                   restaurant_category: restaurant_category_thai)
 
+Restaurant.create(name: 'Åsa La Pizza',
+                  street_address: ' Varbergsvägen',
+                  post_code: '439 54',
+                  city: 'Åsa',
+                  description: 'The local´s place for pizza',
+                  restaurant_category: restaurant_category_italian)
+
 Restaurant.create(name: 'Bov',
                   street_address: 'Gibraltargatan 20',
                   post_code: '411 32',
