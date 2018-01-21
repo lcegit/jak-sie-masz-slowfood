@@ -1,29 +1,39 @@
-<h2 style="margin-top: 30px;"><%= @restaurant.name %></h2>
-<h5 class="lead"><%= @restaurant.description %></h5>
 
-<% @restaurant.menus.each do |menu| %>
-  <div id="menu-<%= menu.id %>">
-    <h2>
-      <%= menu.name %>
-    </h2>
-    <% menu.product_categories.each do |product_category| %>
-      <div id="product_category-<%= product_category.id %>">
-        <h3><%= product_category.name %></h3>
-        <% product_category.products.each do |product| %>
-          <div id="product-<%= product.id %>">
-            <span><%= product.name %>
-              <%= product.description %>
-              Price:
-              <%= product.price %>
-              kr</span>
-            <% if session[:order_id] %>
-              <%=button_to 'Add to Order', order_path(session[:order_id]), method: :put, params: {product: product} %>
-            <% else %>
-              <%=button_to 'Add to Order', orders_path, params: {product: product} %>
-            <% end %>
-          </div>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-8">
+      <h1 style="margin-top: 30px;"><%= @restaurant.name %></h1>
+      <h4 class="lead"><%= @restaurant.description %></h4>
+      <% @restaurant.menus.each do |menu| %>
+        <div id="menu-<%= menu.id %>" class="card-body">
+          <h3 style="background-color: #F0F0F0; padding: 5px; font-family: 'Mr Dafoe', cursive; font-size: 2.5em"><%= menu.name %></h3>
+          <% menu.product_categories.each do |product_category| %>
+            <div id="product_category-<%= product_category.id %>" class="card-title">
+              <h2 style="font-family: 'Mr Dafoe', cursive;"><%= product_category.name %></h2>
+              <% product_category.products.each do |product| %>
+                <div id="product-<%= product.id %>" class="card-text">
+                  <div class="card-text">
+                    <h4><%= product.name %></h4>
+                    <p><%= product.description %></p>
+                  </div>
+                    <div class="card-text">
+                      <p>Price: <%= product.price %> kr</p>
+                    </div>
+                  <% if session[:order_id] %>
+                    <%=button_to 'Add to Order', order_path(session[:order_id]), method: :put, params: {product: product}, class: 'btn btn-light'  %>
+                  <% else %>
+                    <%=button_to 'Add to Order', orders_path, params: {product: product}, class: 'btn btn-light' %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
       </div>
-    <% end %>
+    <div class="col">
+    </div>
   </div>
-<% end %>
+</div>

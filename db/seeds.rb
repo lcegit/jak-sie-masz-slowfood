@@ -38,6 +38,6 @@ product_category_pizza = ProductCategory.create(name: 'Pizza',
 
 Product.create(name: 'Margherita',
                description: 'Classic napoletan pizza,without pineapples',
-               price: 8.50,
+               price: 80.000,
                restaurant: restaurant_bov,
                product_category: product_category_pizza)
