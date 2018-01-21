@@ -20,7 +20,7 @@ Feature: User can see restaurant's details on the restaurant show page
     And I am at latitude: "57.7", longitude: "11.9"
 
   @googlemap
-  Scenario:
+  Scenario: User can navigate to selected restaurant page
     When I visit the landing page
     And I click on "Thomas Kebabrulle" link
     Then I should be on the "Thomas Kebabrulle" show page
