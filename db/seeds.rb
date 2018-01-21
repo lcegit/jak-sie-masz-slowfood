@@ -16,12 +16,12 @@ Restaurant.create(name: 'Åsa La Pizza',
                   description: 'The local´s place for pizza',
                   restaurant_category: restaurant_category_italian)
 
-Restaurant.create(name: 'Bov',
-                  street_address: 'Gibraltargatan 20',
-                  post_code: '411 32',
-                  city: 'Göteborg',
-                  description: 'Really good pizza',
-                  restaurant_category: restaurant_category_italian)
+restaurant_bov = Restaurant.create(name: 'Bov',
+                                   street_address: 'Gibraltargatan 20',
+                                   post_code: '411 32',
+                                   city: 'Göteborg',
+                                   description: 'Really good pizza',
+                                   restaurant_category: restaurant_category_italian)
 
 Restaurant.create(name: 'Brasserie Balzac',
                   street_address: 'Odengatan 26',
@@ -29,3 +29,15 @@ Restaurant.create(name: 'Brasserie Balzac',
                   city: 'Stockholm',
                   description: 'With your nose up like the french',
                   restaurant_category: restaurant_category_french)
+
+menu_lunch = Menu.create(name: 'Lunch', restaurant: restaurant_bov)
+
+product_category_pizza = ProductCategory.create(name: 'Pizza',
+                                                restaurant: restaurant_bov,
+                                                menu: menu_lunch)
+
+Product.create(name: 'Margherita',
+               description: 'Classic napoletan pizza,without pineapples',
+               price: 8.50,
+               restaurant: restaurant_bov,
+               product_category: product_category_pizza)
