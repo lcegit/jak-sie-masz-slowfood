@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0'
 gem 'acts_as_shopping_cart'
 gem 'stripe'
+gem 'haml'
 
 
 group :development, :test do
