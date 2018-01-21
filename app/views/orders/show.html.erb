@@ -1,29 +1,38 @@
 <div class="container">
-    <h2>Order Summary</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Product</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @order.order_items.each do |product| %>
-        <tr>
-          <th scope="row">1</th>
-          <td><%="#{product.item.name} "%></td>
-          <td><%=" #{product.item.price} kr"%></td>
-        </tr>
-        <% end %>
-        <tr>
-          <th scope="row">Total:</th>
-          <td></td>
-          <td>
-            <%= @order.total %> kr
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <h2>Order Summary</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Product</th>
+      <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @order.order_items.each do |product| %>
+      <tr>
+        <th scope="row">1</th>
+        <td><%= "#{product.item.name} " %></td>
+        <td><%= " #{product.item.price} kr" %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <th scope="row">Total:</th>
+      <td></td>
+      <td>
+        <%= @order.total %> kr
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
+</div>
+
+<%= form_tag charges_path do %>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= ENV['PUBLISHABLE_KEY'] %>"
+          data-description="Payment for Order"
+          data-amount="<%= @order.total %>"
+          data-locale="<%= Rails.env.test? ? 'en' : 'auto' %>"></script>
+  <button type="submit" class="btn btn-success">Pay with Card</button>
+<% end %>

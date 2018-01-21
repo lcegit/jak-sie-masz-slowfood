@@ -1,5 +1,4 @@
 Given("the following order items exist in the order:") do |table|
-  @order = Order.create
   table.hashes.each do | product |
     steps %Q{
       And "#{product[:name]}" is already in my order

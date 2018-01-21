@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <% if Rails.env.test? %>
-      <%= tag.meta id: :fake_position, content: fake_location %>
-    <% end %>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>JakSieMaszSlowfood</title>
+<head>
+  <% if Rails.env.test? %>
+    <%= tag.meta id: :fake_position, content: fake_location %>
+  <% end %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>JakSieMaszSlowfood</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto|Play" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Mr+Dafoe" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto|Play" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mr+Dafoe" rel="stylesheet">
 
-    <%= csrf_meta_tags %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GEOCODER_APIKEY']}", 'data-turbolinks-track' => 'reload'%>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GEOCODER_APIKEY']}", 'data-turbolinks-track' => 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+</head>
 
-  <body data-env="<%= Rails.env %>" data-geocoded="<%= @geocoded %>">
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-
-    <%= render 'partials/navbar' %>
-    <%= yield %>
-  </body>
+<body data-env="<%= Rails.env %>" data-geocoded="<%= @geocoded %>">
+<%= render 'partials/navbar' %>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<%= yield %>
+</body>
 </html>

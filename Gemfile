@@ -20,6 +20,7 @@ gem 'rails-assets-gmaps', source: 'https://rails-assets.org'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0'
 gem 'acts_as_shopping_cart'
+gem 'stripe'
 
 
 group :development, :test do
@@ -34,6 +35,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'webmock'
+  gem 'stripe-ruby-mock', '~> 2.5', require: 'stripe_mock'
 end
 
 group :development do
