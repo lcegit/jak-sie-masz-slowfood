@@ -1,14 +1,14 @@
-%nav#navbar.navbar.navbar-light{:style => "background-color: black;"}
-  %ul.nav.justify-content-start{:style => "padding-left: 1em;"}
+%nav#navbar.navbar.navbar-light.navbar-black
+  %ul.nav.justify-content-start.padding-left-nav
     %li.nav-item.active
       = link_to 'Home', root_path, class: 'nav-link'
   %ul.nav.justify-content-center
     %li.nav-item
       - if session[:order_id]
-        %a.nav-link{:style => "font-size: 2.5em; color: white; font-family: 'Mr Dafoe', cursive;"} Dishley
+        %a.nav-link.nav-if-order Dishley
       - else
-        %a.nav-link{:style => "font-size: 2.5em; padding-right: 3.25em; color: white; font-family: 'Mr Dafoe', cursive;"} Dishley
-  %ul.nav.justify-content-end{:style => "padding-right: 1em;"}
+        %a.nav-link.nav-no-order Dishley
+  %ul.nav.justify-content-end.padding-right-nav
     %li.nav-item
       - if session[:order_id]
         = link_to 'Order', order_path(session[:order_id]), class: 'nav-link'
