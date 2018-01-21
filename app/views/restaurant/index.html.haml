@@ -1,0 +1,11 @@
+%h2{:style => "padding: 1em;"} What do you feel like tonight?
+#map
+.row
+  - @restaurants.group_by(&:category_name).each do |key, collection|
+    .card.col-sm-3{:id => "restaurant-category-#{key.downcase}", :style => "padding: 1em;"}
+      %h2.card-title.mr-dafoe{:style => "font-size: 2.5em;"}= key
+      - collection.each do |restaurant|
+        .card-body{:id => "restaurant-#{restaurant.id}"}
+          %h4.card-text= link_to restaurant.name, restaurant
+:javascript
+    var restaurants = #{raw @restaurants.to_json};
