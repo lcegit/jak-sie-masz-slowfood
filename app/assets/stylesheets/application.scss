@@ -13,9 +13,18 @@ nav a {
   color: #FFF;
 }
 
-card-text a {
+.card-text a {
   color: #6c757d;
-  text-decoration: underline;
+}
+
+.mr-dafoe {
+  font-family: 'Mr Dafoe', cursive;
+}
+
+.menu-dafoe {
+  background-color: #F0F0F0;
+  padding: 5px;
+  font-size: 2.5em
 }
 
 .card {
@@ -25,6 +34,10 @@ card-text a {
 
 .card-body {
   padding: 0.5rem;
+}
+
+.address {
+  font-size:0.8em;
 }
 
 .btn-light {

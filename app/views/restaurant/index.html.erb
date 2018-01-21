@@ -1,14 +1,13 @@
 <h2 style="padding: 1em;">What do you feel like tonight?</h2>
-
 <div id="map"></div>
 
 <div class="row">
   <% @restaurants.group_by(&:category_name).each do |key, collection| %>
-    <div id="restaurant-category-<%= key.downcase %>" class="card col-sm-3" style="padding: 1em; background-color: ##F5F5F5;">
-      <h2 class="card-title" style="font-family: 'Mr Dafoe', cursive; font-size: 2.5em;"><%= key %></h2>
+    <div id="restaurant-category-<%= key.downcase %>" class="card col-sm-3" style="padding: 1em;">
+      <h2 class="card-title mr-dafoe" style="font-size: 2.5em;"><%= key %></h2>
       <% collection.each do |restaurant| %>
-        <div id="restaurant-<%= restaurant.id %>" div="div" class="card-body">
-          <h4 class="card-text"><%= link_to restaurant.name, restaurant, style: 'color: #6c757d;' %></h4>
+        <div id="restaurant-<%= restaurant.id %>" class="card-body">
+          <h4 class="card-text"><%= link_to restaurant.name, restaurant %></h4>
         </div>
       <% end %>
     </div>
