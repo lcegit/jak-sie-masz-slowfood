@@ -26,7 +26,9 @@
                       \#{product.price}
                       kr
                   - if session[:order_id]
-                    = button_to 'Add to Order', order_path(session[:order_id]), method: :put, params: {product: product}, class: 'btn btn-light'
+                    = button_to 'Add to Order', order_path(session[:order_id]),
+                     method: :put, params: {product: product}, class: 'btn btn-light'
                   - else
-                    = button_to 'Add to Order', orders_path, params: {product: product}, class: 'btn btn-light'
+                    = button_to 'Add to Order', orders_path,
+                    params: {product: product}, class: 'btn btn-light'
     .col
