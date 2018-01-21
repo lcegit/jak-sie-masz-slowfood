@@ -10,13 +10,13 @@
         \#{@restaurant.city}
       %h2.mr-dafoe= @restaurant.description
       - @restaurant.menus.each do |menu|
-        .card-body{:id => "menu-#{menu.id}"}
+        .card-body{id: "menu-#{menu.id}"}
           %h3.mr-dafoe.menu-dafoe= menu.name
           - menu.product_categories.each do |product_category|
-            .card-title{:id => "product_category-#{product_category.id}"}
+            .card-title{id: "product_category-#{product_category.id}"}
               %h2.mr-dafoe= product_category.name
               - product_category.products.each do |product|
-                .card-text{:id => "product-#{product.id}"}
+                .card-text{id: "product-#{product.id}"}
                   .card-text
                     %h4= product.name
                     %p= product.description

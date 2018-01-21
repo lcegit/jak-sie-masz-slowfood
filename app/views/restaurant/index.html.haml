@@ -2,10 +2,10 @@
 #map
 .row
   - @restaurants.group_by(&:category_name).each do |key, collection|
-    .card.col-sm-3{:id => "restaurant-category-#{key.downcase}"}
+    .card.col-sm-3{id: "restaurant-category-#{key.downcase}"}
       %h2.card-title.mr-dafoe.rest-category= key
       - collection.each do |restaurant|
-        .card-body{:id => "restaurant-#{restaurant.id}"}
+        .card-body{id: "restaurant-#{restaurant.id}"}
           %h4.card-text= link_to restaurant.name, restaurant
 :javascript
     var restaurants = #{raw @restaurants.to_json};
