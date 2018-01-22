@@ -1,7 +1,7 @@
 function initiateMap() {
     getCookie('geocoderLocation').then(function (value) {
         console.log('cookie read');
-        const coords = JSON.parse(value);
+        var coords = JSON.parse(value);
         map = GMaps({
             div: '#map',
             zoom: 12,

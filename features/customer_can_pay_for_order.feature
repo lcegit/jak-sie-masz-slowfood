@@ -10,9 +10,9 @@ Feature: Customer can pay for order
     | Oliver's Burger   | Kungsgatan 1      | Göteborg |
 
     Given the following products exist within a specific restaurant
-    | name          | restaurant      | description      | category    | price | image_file_link                    |
-    | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 45    | http://www.example.com/image.jpg   |
-    | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50    | http://www.example.com/image.jpg   |
+    | name          | restaurant      | description      | category    | price |
+    | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 45    |
+    | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50    |
 
     Given I visit the "Oliver's Burger" show page
 

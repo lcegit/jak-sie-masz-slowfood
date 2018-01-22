@@ -22,6 +22,7 @@ gem 'bootstrap', '~> 4.0'
 gem 'acts_as_shopping_cart'
 gem 'stripe'
 gem 'haml'
+gem 'devise'
 
 
 group :development, :test do

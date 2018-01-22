@@ -11,10 +11,10 @@ Feature: User can see product description on the restaurant show page
       | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
 
     Given the following products exist within a specific restaurant
-      | name          | restaurant      | description      | price | category    | menu  | image_file_link                    |
-      | Chicken wings | Oliver's Burger | Nice wings       | 50    | Starter     | Lunch | http://www.example.com/image.jpg   |
-      | Double Burger | Oliver's Burger | Tasty fat burger | 150   | Main Course | Lunch | http://www.example.com/image.jpg   |
-      | Apple pie     | Oliver's Burger | Sweet pie        | 65    | Dessert     | Lunch | http://www.example.com/image.jpg   |
+      | name          | restaurant      | description      | price | category    | menu  |
+      | Chicken wings | Oliver's Burger | Nice wings       | 50    | Starter     | Lunch |
+      | Double Burger | Oliver's Burger | Tasty fat burger | 150   | Main Course | Lunch |
+      | Apple pie     | Oliver's Burger | Sweet pie        | 65    | Dessert     | Lunch |
 
   @googlemap
   Scenario:

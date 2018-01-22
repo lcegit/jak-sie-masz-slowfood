@@ -75,8 +75,8 @@ function setCookie(name, value) {
 
 function getCookie(name) {
     return new Promise(function (resolve) {
-        const value = document.cookie.split('; ').reduce(function (r, v) {
-            const parts = v.split('=');
+        var value = document.cookie.split('; ').reduce(function (r, v) {
+            var parts = v.split('=');
             return parts[0] === name ? decodeURIComponent(parts[1]) : r
         }, '');
         resolve(value);
@@ -84,7 +84,7 @@ function getCookie(name) {
 }
 
 function setUpObserver() {
-    const element = document.querySelector('body');
+    var element = document.querySelector('body');
     var callback = function (mutations) {
         mutations.forEach(function (mutation) {
             if (mutation.type === "attributes") {
