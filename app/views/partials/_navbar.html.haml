@@ -4,16 +4,16 @@
       = link_to 'Home', root_path, class: 'nav-link'
   %ul.nav.justify-content-center
     %li.nav-item.nav-logo Dishley
-
   %ul.nav.justify-content-end.padding-right-nav
     - if current_user
       %li.nav-item.active
-        %span
-          Logged in as:
-          %strong= current_user.email
+        Logged in as:
+        %strong= current_user.email
     - else
       %li.nav-item.active
-        = link_to 'Sign up', new_user_registration_path unless current_page? new_user_registration_path
-    %li.nav-item
-      - if session[:order_id]
-        = link_to 'Order', order_path(session[:order_id]), class: 'nav-link'
+        %span
+          = link_to 'Sign up', new_user_registration_path unless current_page? new_user_registration_path
+      %li.nav-item.active
+        %span
+          - if session[:order_id]
+            = link_to 'Order', order_path(session[:order_id]), class: 'nav-link'
