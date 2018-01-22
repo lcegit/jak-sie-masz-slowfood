@@ -3,11 +3,8 @@
     %li.nav-item.active
       = link_to 'Home', root_path, class: 'nav-link'
   %ul.nav.justify-content-center
-    %li.nav-item
-      - if session[:order_id]
-        %a.nav-link.nav-if-order Dishley
-      - else
-        %a.nav-link.nav-no-order Dishley
+    %li.nav-item.nav-logo Dishley
+
   %ul.nav.justify-content-end.padding-right-nav
     %li.nav-item
       - if session[:order_id]
