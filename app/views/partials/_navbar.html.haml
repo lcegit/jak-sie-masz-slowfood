@@ -7,8 +7,9 @@
   %ul.nav.justify-content-end.padding-right-nav
     - if current_user
       %li.nav-item.active
-        Logged in as:
-        %strong= current_user.email
+        %span
+          Logged in as:
+          %strong= current_user.email
     - else
       %li.nav-item.active
         %span
